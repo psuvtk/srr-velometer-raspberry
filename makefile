@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = --std=gnu99 -Wall
+CFLAGS = --std=gnu99
 LDFLAGS = -lm -lwiringPi
 OBJS = main.o radar_device.o bytearray.o radar_packet.o display.o
 
@@ -12,6 +12,7 @@ srr-velometer-raspberry: $(OBJS)
 .PHONY: clean install
 clean:
 	rm -f $(OBJS)
+	rm -f srr-velometer-raspberry
 
 install:
-	mv srr-velometer-raspberry ~/bin/
+	mv srr-velometer-raspberry /home/pi/bin/

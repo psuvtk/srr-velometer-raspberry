@@ -14,13 +14,12 @@
 #define PORT_UART "/dev/ttyACM0"
 #define PORT_DATA "/dev/ttyACM1"
 
-bool sensor_start();
-bool sensor_stop();
+extern bool sensor_start();
+extern bool sensor_stop();
 
-bool device_open(int *fd);
-bool device_close(int fd);
+extern bool device_open(int *fd);
+extern bool device_close(int fd);
 
 static bool config_serial(int fd, int baudrate);
-
 
 #endif // RADAR_DEVICE_H

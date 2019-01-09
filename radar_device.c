@@ -19,6 +19,7 @@ bool sensor_start() {
     return true;
 }
 
+
 bool sensor_stop() {
     int fd = open(PORT_UART, O_RDWR | O_NOCTTY | O_NDELAY);
     if (fd == -1) return false;
@@ -32,6 +33,7 @@ bool sensor_stop() {
     close(fd);
     return true;
 }
+
 
 bool device_open(int *fd) {
     *fd = open(PORT_DATA, O_RDONLY | O_NOCTTY | O_NDELAY);

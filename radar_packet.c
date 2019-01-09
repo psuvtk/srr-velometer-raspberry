@@ -43,14 +43,12 @@ void packet_parse(packet_t *packet, char *raw_packet, int length) {
         packet->isvalid = true;
     }
 }
-
 void packet_init(packet_t *packet) {
     packet->detObj = NULL;
     packet->cluster = NULL;
     packet->trackers = NULL;
     packet->parkingAssitBins = NULL;
 }
-
 void packet_clear(packet_t *packet) {
     if (packet->detObj != NULL) {
         free(packet->detObj);
@@ -81,6 +79,7 @@ static void construct_header(packet_t *packet, char *raw_packet) {
     packet->header.version = ((const __header_t *)raw_packet)->version;
 }
 
+
 static uint32_t getTlvType(const char *tl) {
     return ((const __tl_t *)(tl))->type;
 }
@@ -96,6 +95,7 @@ static uint16_t getDescrNumObj(const char *descr) {
 static uint16_t getDescrQFormat(const char *descr) {
     return ((const __dataObjDescr_t *)descr)->xyzQFormat;
 }
+
 
 static void constructDetObj(packet_t *packet, const char *tl) {
     uint16_t numObjs = getDescrNumObj(tl);

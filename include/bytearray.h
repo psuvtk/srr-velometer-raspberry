@@ -6,7 +6,7 @@
 #include <malloc.h>
 #include <string.h>
 
-#define DEFAULT_BUF_LEN 1024
+#define DEFAULT_BUF_LEN 2048
 
 typedef struct {
     char *data;
@@ -14,13 +14,14 @@ typedef struct {
     int capacity;
 } bytearray_t;
 
-void bytearray_init(bytearray_t *buf);
-void bytearray_destroy(bytearray_t *buf);
+extern void bytearray_init(bytearray_t *buf);
+extern void bytearray_destroy(bytearray_t *buf);
 
-void bytearray_append(bytearray_t *buf, char *pdata, int len);
-void bytearray_lremove(bytearray_t *buf, int len);
-void bytearray_clear(bytearray_t *buf);
+extern void bytearray_append(bytearray_t *buf, char *pdata, int len);
+extern void bytearray_lremove(bytearray_t *buf, int len);
+extern void bytearray_clear(bytearray_t *buf);
 
-bool bytearray_startswith(const bytearray_t *buf, const char *pdata, int len);
-int bytearray_find(const bytearray_t *buf, const char *data, int len, int skip);
+extern bool bytearray_startswith(const bytearray_t *buf, const char *pdata, int len);
+extern int bytearray_find(const bytearray_t *buf, const char *data, int len, int skip);
+
 #endif // BYTEARRAY_H

@@ -32,7 +32,7 @@ void display_init() {
     digitalWrite(PIN_LATCH, LOW);
 
     // 默认空闲状态
-    display_write_idle()
+    display_write_idle();
 }
 
 /**
